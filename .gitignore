@@ -40,3 +40,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Large files
+src/assets/images/Landing_Page_2.jpg
