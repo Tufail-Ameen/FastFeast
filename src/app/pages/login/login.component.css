@@ -30,9 +30,9 @@ ion-row {
 ion-col {
     padding: 0;
     margin: 0;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 
 .container {
@@ -55,8 +55,8 @@ ion-col {
 
 .formpart {
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    /* display: flex;
+    align-items: start;
+    justify-content: start; */
+    /* padding: 2rem; */
 }

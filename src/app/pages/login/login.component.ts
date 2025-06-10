@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
 import { LogincomponentComponent } from '../../component/logincomponent/logincomponent.component';
-import { IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
-  standalone: true,
   imports: [
     LogincomponentComponent,
-    IonGrid,
-    IonRow,
-    IonCol
+    IonicModule
   ],
 
   templateUrl: './login.component.html',

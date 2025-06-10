@@ -1,0 +1,39 @@
+.container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.welcome-text {
+    margin: 0;
+    color: #333;
+}
+
+.signin-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.signin-button {
+    margin-top: 16px;
+    --background: #007bff;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 16px;
+    
+    a {
+        color: #007bff;
+        text-decoration: none;
+        cursor: pointer;
+    }
+} 

@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+/* @import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/margin.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css"; */
+
+
+:root {
+    --primary_color: #0d9488;
+    --primary_hover-color: #0f766e;
+    --secondary-color: #374151;
+    --secondary_hover-color: #4b5563;
+
+
+    --topbar-bg: #0d9488;
+    --dashboard-bg: #f4f4f4;
+    --grey: #111827;
+    --white: #ffffff;
+    --borderGray: 2px solid #111827;
+}
+
+ion-button {
+    border-radius: 40px;
+    cursor: pointer;
+    --background: var(--primary_color);
+    --color: var(--white);
+    border-radius: 50%;
+}
+
+ion-button:hover {
+    --background: var(--primary_hover-color);
+}
+
+a {
+    text-decoration: underline !important;
+    color: var(--secondary-color) !important;
+}
+
+a:hover {
+    cursor: pointer;
+    color: var(--primary_hover-color) !important;
+}

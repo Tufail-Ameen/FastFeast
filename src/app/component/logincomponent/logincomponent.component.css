@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+ion-grid {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ion-row {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ion-col {
+    margin: 0px;
+    padding: 0px;
+}
+
+.welcome-text {
+    color: #000000;
+    font-size: 16px;
+    /* margin: 0px; */
+    /* padding: 0px; */
+}
+
+.signin-text {
+    color: #000000;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.signin-button {
+    font-size: 18px;
+    color: ffffff;
+    font-size: bold;
+    padding: 0px;
+    width: 100%;
+    height: 13%;
+}
+
+.register-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
