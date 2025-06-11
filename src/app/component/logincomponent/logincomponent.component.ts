@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [IonicModule, RouterLink],
   templateUrl: './logincomponent.component.html',
-  styleUrl: './logincomponent.component.css'
+  styleUrl: './logincomponent.component.scss'
 })
 export class LogincomponentComponent {
 
