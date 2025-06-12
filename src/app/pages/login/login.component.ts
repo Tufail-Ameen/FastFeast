@@ -3,12 +3,12 @@ import { LogincomponentComponent } from '../../component/logincomponent/logincom
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   imports: [
     LogincomponentComponent
   ],
-
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.scss'
 })
 export class LoginComponent {
 

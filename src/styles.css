@@ -13,11 +13,12 @@
 }
 
 ion-button {
-    border-radius: 40px;
     cursor: pointer;
     --background: var(--primary_color);
     --color: var(--white);
-    border-radius: 50%;
+    --border-radius: 10px;
+    min-height: 45px;
+    --padding: 16px;
 }
 
 ion-button:hover {
@@ -52,4 +53,10 @@ a:hover {
 
 .auth-row {
     width: 100%;
+}
+
+.auth-headings {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 900;
 }
