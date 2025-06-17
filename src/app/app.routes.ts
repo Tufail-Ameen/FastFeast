@@ -3,6 +3,7 @@ import { AuthLayoutComponent } from './component/auth-layout/auth-layout.compone
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ForgetComComponent } from './component/forget-com/forget-com.component';
+import { OTPComponent } from './pages/otp/otp.component';
 
 export const routes: Routes = [
   {
@@ -20,6 +21,10 @@ export const routes: Routes = [
       {
         path: 'forget',
         component: ForgetComComponent
+      },
+      {
+        path: 'otp',
+        component: OTPComponent
       },
       {
         path: '', redirectTo: 'login', pathMatch: 'full'

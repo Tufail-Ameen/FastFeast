@@ -1,0 +1,23 @@
+<ion-grid class="auth-container">
+  <ion-row class="auth-row">
+    <ion-col size="2"></ion-col>
+
+    <ion-col size="8" class="auth-form-container ion-no-padding">
+      <h1>Enter security code</h1>
+      <p class="ion-no-padding ion-no-margin">Please check your emails for a message with your code. Your code is 6
+        number long</p>
+      <ion-row>
+        <ion-col class="ion-no-padding" size="6">
+          <ion-input type="number" label="Enter code" label-placement="floating" fill="solid"
+            placeholder="Enter code"></ion-input>
+        </ion-col>
+        <ion-col class="ion-padding-start" size="6">
+          <span>We sent your code to:</span> <br>
+          <span>tufailameen62&#64;gmail.com</span>
+        </ion-col>
+      </ion-row>
+      <ion-button>Continue</ion-button>
+      <a routerLink="/login">Login with Password</a>
+    </ion-col>
+  </ion-row>
+</ion-grid>
