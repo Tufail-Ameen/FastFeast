@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { RouterOutlet } from '@angular/router';
 
@@ -11,6 +11,7 @@ import { RouterOutlet } from '@angular/router';
   ],
   templateUrl: './auth-layout.component.html',
   styleUrls: ['./auth-layout.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class AuthLayoutComponent  implements OnInit {
 
