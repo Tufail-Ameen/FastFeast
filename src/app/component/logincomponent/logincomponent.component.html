@@ -2,19 +2,19 @@
     <ion-row class="auth-row">
         <ion-col size="2"></ion-col>
 
-        <ion-col size="8" class="auth-form-container">            
-            <h4 class="welcome-text ion-no-margin ion-no-padding">Welcome back!</h4>
-            <span class="auth-headings ion-border-all">Sign in</span>
+        <ion-col size="8" class="auth-form-container">
+            <h4>Welcome back!</h4>
+            <h1>Sign in</h1>
             <ion-input label="Enter your email address" label-placement="floating" fill="solid"
                 placeholder="Email address"></ion-input>
             <ion-input label="Enter your Password" label-placement="floating" fill="solid"
                 placeholder="Password"></ion-input>
-            <a>Forgot password?</a>
-            <ion-button class="signin-button">Sign in</ion-button>
+            <a routerLink="/forget">Forgot password?</a>
+            <ion-button>Sign in</ion-button>
             <div class="register-text">
-                <a routerLink="/register" >Register yourself</a>
+                <a routerLink="/register">Register yourself</a>
             </div>
-            
+
         </ion-col>
     </ion-row>
-</ion-grid>
+</ion-grid> 
