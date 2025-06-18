@@ -3,8 +3,10 @@
     --heading-color: #000000;
     --primary_color: #0d9488;
     --primary_hover-color: #0f766e;
-    --secondary-color: #374151;
-    --secondary_hover-color: #4b5563;
+
+    --input-label: #374151;
+    --input-label-hover: #4b5563;
+
     --topbar-bg: #0d9488;
     --dashboard-bg: #f4f4f4;
     --grey: #111827;
@@ -12,7 +14,6 @@
     --borderGray: 2px solid #111827;
 }
 
-/* ===== GLOBAL IONIC COMPONENT STYLES ===== */
 ion-button {
     cursor: pointer;
     --background: var(--primary_color);
@@ -37,7 +38,7 @@ ion-button:hover {
 
 a {
     text-decoration: underline !important;
-    color: var(--secondary-color) !important;
+    color: var(--input-label) !important;
 }
 
 a:hover {
@@ -45,6 +46,40 @@ a:hover {
     color: var(--primary_hover-color) !important;
 }
 
+/* Inputs */
+ion-input {
+    --ion-color-primary: var(--primary_color);
+    --placeholder-color: gray;
+    --placeholder-opacity: 1;
+    --padding-start: 10px;
+    --padding-end: 10px;
+}
+
+ion-input::part(label) {
+    color: gray;
+}
+
+ion-input.ion-focused::part(label) {
+    color: var(--primary_color);
+}
+
+ion-input.ion-valid::part(label),
+ion-input.has-value::part(label) {
+    color: var(--primary_color);
+}
+
+ion-input::part(native) {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+ion-input.ion-focused::part(native) {
+    border-color: var(--primary_color);
+    box-shadow: 0 0 0 1px var(--primary_color);
+}
+
+/* Headings */
 h1 {
     font-size: 30px !important;
     font-weight: 900 !important;
