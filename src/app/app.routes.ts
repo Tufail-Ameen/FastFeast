@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ForgetComComponent } from './component/forget-com/forget-com.component';
 import { OTPComponent } from './pages/otp/otp.component';
+import { PasswordComponent } from './pages/password/password.component';
 
 export const routes: Routes = [
   {
@@ -25,6 +26,10 @@ export const routes: Routes = [
       {
         path: 'otp',
         component: OTPComponent
+      },
+      {
+        path: 'password',
+        component: PasswordComponent
       },
       {
         path: '', redirectTo: 'login', pathMatch: 'full'
