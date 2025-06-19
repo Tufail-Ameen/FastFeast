@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { CLIENT_RENEG_LIMIT } from 'tls';
 
 @Component({
   selector: 'app-password-com',

@@ -108,3 +108,8 @@ h1 {
 .auth-row {
     width: 100%;
 }
+
+
+.border {
+    border: 1px solid red;
+}

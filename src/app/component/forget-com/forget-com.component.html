@@ -4,10 +4,13 @@
 
     <ion-col size="8" class="auth-form-container ion-no-padding">
       <h1>Reset your password</h1>
-      <p class="ion-no-padding ion-no-margin">Enter your user account's verified email address and we will send you a password reset link.</p>
-      <ion-input label="Email address" type="email" placeholder="Email address" label-placement="floating"
-        fill="solid"></ion-input>
-      <ion-button routerLink="/otp">Send password reset email</ion-button>
+      <p class="ion-no-padding ion-no-margin">Enter your user account's verified email address and we will send you a
+        password reset link.</p>
+      <form class="auth-form-container" #forgetForm="ngForm" (ngSubmit)="onSubmit(forgetForm.value)">
+        <ion-input label="Email address" type="email" placeholder="Email address" label-placement="floating"
+          fill="solid" name="email" [(ngModel)]="forgetData.email" #email></ion-input>
+        <ion-button type="submit" routerLink="/otp">Send password reset email</ion-button>
+      </form>
       <ion-row class="ion-justify-content-between">
         <div>
           <a routerLink="/login">Already have an account? Login</a>

@@ -5,15 +5,18 @@
         <ion-col size="8" class="auth-form-container">
             <h4>Welcome back!</h4>
             <h1>Sign in</h1>
-            <ion-input label="Enter your email address" label-placement="floating" fill="solid"
-                placeholder="Email address"></ion-input>
-            <ion-input label="Enter your Password" label-placement="floating" fill="solid"
-                placeholder="Password"></ion-input>
-            <a routerLink="/forget">Forgot password?</a>
-            <ion-button>Sign in</ion-button>
-            <div class="register-text">
-                <a routerLink="/register">Register yourself</a>
-            </div>
+
+            <form class="auth-form-container" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+                <ion-input label="Enter your email address" label-placement="floating" fill="solid"
+                    placeholder="Email address" name="email" [(ngModel)]="loginData.email" #email></ion-input>
+                <ion-input label="Enter your Password" label-placement="floating" fill="solid" placeholder="Password"
+                    name="password" [(ngModel)]="loginData.password" #password></ion-input>
+                <a routerLink="/forget">Forgot password?</a>
+
+                <ion-button type="submit">Sign in</ion-button>
+            </form>
+
+            <a routerLink="/register">Register yourself</a>
 
         </ion-col>
     </ion-row>
