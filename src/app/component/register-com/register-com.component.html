@@ -4,109 +4,119 @@
 
     <ion-col size="8" class="auth-form-container">
       <h1>Register</h1>
-      <ion-row>
-        <!-- First Name -->
-        <ion-col size="6" class="ion-no-margin-start">
-          <ion-input class="ion-no-margin" label="First Name:" label-placement="floating" fill="solid"
-            placeholder="Enter First Name"></ion-input>
-        </ion-col>
+      <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
 
-        <!-- Last Name -->
-        <ion-col size="6" class="ion-no-margin-end">
-          <ion-input class="ion-no-margin" label="Last Name:" label-placement="floating" fill="solid"
-            placeholder="Enter Last Name"></ion-input>
-        </ion-col>
 
-        <!-- Gender -->
-        <ion-col size="6" class="ion-no-margin-start ion-no-padding-bottom">
-          <ion-label>Gender:</ion-label>
-          <ion-radio-group value="custom-checked">
+        <ion-row>
+          <!-- First Name -->
+          <ion-col size="6" class="ion-no-margin-start">
+            <ion-input class="ion-no-margin" label="First Name:" label-placement="floating" fill="solid"
+              placeholder="Enter First Name" name="firstName" [(ngModel)]="registerData.firstName"
+              #firstName></ion-input>
+          </ion-col>
+
+          <!-- Last Name -->
+          <ion-col size="6" class="ion-no-margin-end">
+            <ion-input class="ion-no-margin" label="Last Name:" label-placement="floating" fill="solid"
+              placeholder="Enter Last Name" name="lastName" [(ngModel)]="registerData.lastName" #lastName></ion-input>
+          </ion-col>
+
+          <!-- Gender -->
+          <ion-col size="6" class="ion-no-margin-start ion-no-padding-bottom">
+            <ion-label>Gender:</ion-label>
+            <ion-radio-group name="gender" [(ngModel)]="registerData.gender">
+              <ion-row class="ion-no-padding" style="height: 40px;">
+                <ion-col size="5" class="ion-no-padding" style="display: flex; height: 100%; align-items: center;">
+                  <div style="display: flex; align-items: center;">
+                    <ion-radio value="male"></ion-radio>
+                    <ion-label style="margin-left: 8px;">Male</ion-label>
+                  </div>
+                </ion-col>
+                <ion-col size="5" class="ion-no-padding" style="display: flex; height: 100%; align-items: center;">
+                  <div style="display: flex; align-items: center;">
+                    <ion-radio value="female"></ion-radio>
+                    <ion-label style="margin-left: 8px;">Female</ion-label>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-radio-group>
+          </ion-col>
+
+          <!-- Language -->
+          <ion-col size="6" class="ion-no-margin-end ion-no-padding-top">
+            <ion-label>Languages:</ion-label>
             <ion-row class="ion-no-padding" style="height: 40px;">
               <ion-col size="5" class="ion-no-padding" style="display: flex; height: 100%; align-items: center;">
                 <div style="display: flex; align-items: center;">
-                  <ion-radio value="male"></ion-radio>
-                  <ion-label style="margin-left: 8px;">Male</ion-label>
+                  <ion-checkbox name="english" [(ngModel)]="registerData.language.english"></ion-checkbox>
+                  <ion-label style="margin-left: 8px;">English</ion-label>
                 </div>
               </ion-col>
               <ion-col size="5" class="ion-no-padding" style="display: flex; height: 100%; align-items: center;">
                 <div style="display: flex; align-items: center;">
-                  <ion-radio value="female"></ion-radio>
-                  <ion-label style="margin-left: 8px;">Female</ion-label>
+                  <ion-checkbox name="spanish" [(ngModel)]="registerData.language.spanish"></ion-checkbox>
+                  <ion-label style="margin-left: 8px;">Spanish</ion-label>
                 </div>
               </ion-col>
             </ion-row>
-          </ion-radio-group>
-        </ion-col>
+          </ion-col>
 
-        <!-- Language -->
-        <ion-col size="6" class="ion-no-margin-end ion-no-padding-top">
-          <ion-label>Languages:</ion-label>
-          <ion-row class="ion-no-padding" style="height: 40px;">
-            <ion-col size="5" class="ion-no-padding" style="display: flex; height: 100%; align-items: center;">
-              <div style="display: flex; align-items: center;">
-                <ion-checkbox value="english"></ion-checkbox>
-                <ion-label style="margin-left: 8px;">English</ion-label>
-              </div>
-            </ion-col>
-            <ion-col size="5" class="ion-no-padding" style="display: flex; height: 100%; align-items: center;">
-              <div style="display: flex; align-items: center;">
-                <ion-checkbox value="spanish"></ion-checkbox>
-                <ion-label style="margin-left: 8px;">Spanish</ion-label>
-              </div>
-            </ion-col>
-          </ion-row>
-        </ion-col>
+          <!-- Email -->
+          <ion-col size="6" class="ion-no-margin-start">
+            <ion-input class="ion-no-margin" label="Email:" label-placement="floating" fill="solid"
+              placeholder="Enter Email" name="email" [(ngModel)]="registerData.email" #email></ion-input>
+          </ion-col>
 
-        <!-- Email -->
-        <ion-col size="6" class="ion-no-margin-start">
-          <ion-input class="ion-no-margin" label="Email:" label-placement="floating" fill="solid"
-            placeholder="Enter Email"></ion-input>
-        </ion-col>
+          <!-- Phone No -->
+          <ion-col size="6" class="ion-no-margin-end">
+            <ion-input class="ion-no-margin" label="Phone No:" label-placement="floating" fill="solid"
+              placeholder="Enter Phone No" name="phoneNo" [(ngModel)]="registerData.phoneNo" #phoneNo></ion-input>
+          </ion-col>
 
-        <!-- Phone No -->
-        <ion-col size="6" class="ion-no-margin-end">
-          <ion-input class="ion-no-margin" label="Phone No:" label-placement="floating" fill="solid"
-            placeholder="Enter Phone No"></ion-input>
-        </ion-col>
+          <!-- City -->
+          <ion-col size="6" class="ion-no-margin-start">
+            <ion-select label="Select City:" label-placement="floating" fill="solid" name="city"
+              [(ngModel)]="registerData.city" #city>
+              <ion-select-option value="apple">Karachi</ion-select-option>
+              <ion-select-option value="lahore">Lahore</ion-select-option>
+              <ion-select-option value="Islamanbad">Islamabad</ion-select-option>
+              <ion-select-option value="Peshawar">Peshawar</ion-select-option>
+              <ion-select-option value="Quetta">Quetta</ion-select-option>
+              <ion-select-option value="Multan">Multan</ion-select-option>
+              <ion-select-option value="Faisalabad">Faisalabad</ion-select-option>
+              <ion-select-option value="Rawalpindi">Rawalpindi</ion-select-option>
+              <ion-select-option value="Sialkot">Sialkot</ion-select-option>
+              <ion-select-option value="Gujranwala">Gujranwala</ion-select-option>
+            </ion-select>
+          </ion-col>
 
-        <!-- City -->
-        <ion-col size="6" class="ion-no-margin-start">
-          <ion-select label="Select City:" label-placement="floating" fill="solid">
-            <ion-select-option value="apple">Karachi</ion-select-option>
-            <ion-select-option value="lahore">Lahore</ion-select-option>
-            <ion-select-option value="Islamanbad">Islamabad</ion-select-option>
-            <ion-select-option value="Peshawar">Peshawar</ion-select-option>
-            <ion-select-option value="Quetta">Quetta</ion-select-option>
-            <ion-select-option value="Multan">Multan</ion-select-option>
-            <ion-select-option value="Faisalabad">Faisalabad</ion-select-option>
-            <ion-select-option value="Rawalpindi">Rawalpindi</ion-select-option>
-            <ion-select-option value="Sialkot">Sialkot</ion-select-option>
-            <ion-select-option value="Gujranwala">Gujranwala</ion-select-option>
-          </ion-select>
-        </ion-col>
+          <!-- Password -->
+          <ion-col size="6" class="ion-no-margin-end">
+            <ion-input class="ion-no-margin" label="Password:" label-placement="floating" fill="solid" name="password"
+              [(ngModel)]="registerData.password" #password></ion-input>
+          </ion-col>
 
-        <!-- Password -->
-        <ion-col size="6" class="ion-no-margin-end">
-          <ion-input class="ion-no-margin" label="Password:" label-placement="floating" fill="solid"></ion-input>
-        </ion-col>
+          <!-- Text Area -->
+          <ion-col size="12" class="ion-no-margin-start">
+            <ion-textarea label="Description:" labelPlacement="floating" fill="solid"
+              placeholder="Describe yourself here" name="description" [(ngModel)]="registerData.description"
+              #description></ion-textarea>
+          </ion-col>
 
-        <!-- Text Area -->
-        <ion-col size="12" class="ion-no-margin-start">
-          <ion-textarea label="Description:" labelPlacement="floating" fill="solid"
-            placeholder="Describe yourself here"></ion-textarea>
-        </ion-col>
+          <!-- Submit Button -->
+          <ion-col size="12" class="ion-no-margin-start">
+            <ion-button type="submit" expand="block" fill="solid">Submit</ion-button>
+          </ion-col>
 
-        <!-- Submit Button -->
-        <ion-col size="12" class="ion-no-margin-start">
-          <ion-button expand="block" fill="solid">Submit</ion-button>
-        </ion-col>
-
-        <ion-col size="12" class="ion-no-margin-start">
-          <a href="/login">Already have an account? Login</a>
-        </ion-col>
+          <ion-col size="12" class="ion-no-margin-start">
+            <a href="/login">Already have an account? Login</a>
+          </ion-col>
 
 
-      </ion-row>
+        </ion-row>
+      </form>
+
+
     </ion-col>
   </ion-row>
 </ion-grid>
