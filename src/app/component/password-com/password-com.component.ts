@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -10,6 +10,9 @@ import { IonicModule } from '@ionic/angular';
   styleUrls: ['./password-com.component.scss'],
 })
 export class PasswordComComponent implements OnInit {
+  @ViewChild('changePasswordForm') changePasswordForm!: NgForm;
+
+  submitted = false;
 
   changePasswordData = {
     newPassword: '',
@@ -17,6 +20,14 @@ export class PasswordComComponent implements OnInit {
   }
 
   onSubmit(data: any) {
+    this.submitted = true;
+
+    // // Check if form is valid
+    // if (this.changePasswordForm.invalid) {
+    //   console.log('Form is invalid');
+    //   return;
+    // }
+
     console.log("Form data:", data);
   }
 

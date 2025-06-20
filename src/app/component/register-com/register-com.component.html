@@ -6,19 +6,35 @@
       <h1>Register</h1>
       <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
 
-
         <ion-row>
           <!-- First Name -->
           <ion-col size="6" class="ion-no-margin-start">
             <ion-input class="ion-no-margin" label="First Name:" label-placement="floating" fill="solid"
-              placeholder="Enter First Name" name="firstName" [(ngModel)]="registerData.firstName"
-              #firstName></ion-input>
+              placeholder="Enter First Name" name="firstName" [(ngModel)]="registerData.firstName" #firstName="ngModel"
+              required minlength="3" maxlength="20" pattern="^[a-zA-Z\s]+$"></ion-input>
+
+            <!-- Show Error -->
+            <div class="text-danger" *ngIf="firstName?.invalid && (firstName?.touched || submitted)">
+              <span *ngIf="firstName.errors?.['required']">First name is required</span>
+              <span *ngIf="firstName.errors?.['minlength']">First name must be at least 3 characters</span>
+              <span *ngIf="firstName.errors?.['maxlength']">First name cannot exceed 20 characters</span>
+              <span *ngIf="firstName.errors?.['pattern']">First name can only contain letters and spaces</span>
+            </div>
           </ion-col>
 
           <!-- Last Name -->
           <ion-col size="6" class="ion-no-margin-end">
             <ion-input class="ion-no-margin" label="Last Name:" label-placement="floating" fill="solid"
-              placeholder="Enter Last Name" name="lastName" [(ngModel)]="registerData.lastName" #lastName></ion-input>
+              placeholder="Enter Last Name" name="lastName" [(ngModel)]="registerData.lastName" #lastName="ngModel"
+              required minlength="3" maxlength="20" pattern="^[a-zA-Z\s]+$"></ion-input>
+
+            <!-- Show Error -->
+            <div class="text-danger" *ngIf="lastName?.invalid && (lastName?.touched || submitted)">
+              <span *ngIf="lastName.errors?.['required']">Last name is required</span>
+              <span *ngIf="lastName.errors?.['minlength']">Last name must be at least 3 characters</span>
+              <span *ngIf="lastName.errors?.['maxlength']">Last name cannot exceed 20 characters</span>
+              <span *ngIf="lastName.errors?.['pattern']">Last name can only contain letters and spaces</span>
+            </div>
           </ion-col>
 
           <!-- Gender -->
@@ -64,13 +80,29 @@
           <!-- Email -->
           <ion-col size="6" class="ion-no-margin-start">
             <ion-input class="ion-no-margin" label="Email:" label-placement="floating" fill="solid"
-              placeholder="Enter Email" name="email" [(ngModel)]="registerData.email" #email></ion-input>
+              placeholder="Enter Email" name="email" [(ngModel)]="registerData.email" #email="ngModel" required
+              pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"></ion-input>
+
+            <!-- Show Error -->
+            <div class="text-danger" *ngIf="email?.invalid && (email?.touched || submitted)">
+              <span *ngIf="email.errors?.['required']">This is Required</span>
+              <span *ngIf="email.errors?.['pattern']">Email Id is not proper</span>
+            </div>
           </ion-col>
 
           <!-- Phone No -->
           <ion-col size="6" class="ion-no-margin-end">
             <ion-input class="ion-no-margin" label="Phone No:" label-placement="floating" fill="solid"
-              placeholder="Enter Phone No" name="phoneNo" [(ngModel)]="registerData.phoneNo" #phoneNo></ion-input>
+              placeholder="Enter Phone No" name="phoneNo" [(ngModel)]="registerData.phoneNo" #phoneNo="ngModel" required
+              type="tel" pattern="^[+]?[0-9]{10,15}$" minlength="10" maxlength="15"></ion-input>
+
+            <!-- Show Error -->
+            <div class="text-danger" *ngIf="phoneNo?.invalid && (phoneNo?.touched || submitted)">
+              <span *ngIf="phoneNo.errors?.['required']">Phone number is required</span>
+              <span *ngIf="phoneNo.errors?.['minlength']">Phone number must be at least 10 digits</span>
+              <span *ngIf="phoneNo.errors?.['maxlength']">Phone number cannot exceed 15 digits</span>
+              <span *ngIf="phoneNo.errors?.['pattern']">Please enter a valid phone number</span>
+            </div>
           </ion-col>
 
           <!-- City -->
@@ -93,14 +125,32 @@
           <!-- Password -->
           <ion-col size="6" class="ion-no-margin-end">
             <ion-input class="ion-no-margin" label="Password:" label-placement="floating" fill="solid" name="password"
-              [(ngModel)]="registerData.password" #password></ion-input>
+              [(ngModel)]="registerData.password" #password="ngModel" required type="password" minlength="8"
+              maxlength="50" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+            </ion-input>
+
+            <!-- Show Error -->
+            <div class="text-danger" *ngIf="password?.invalid && (password?.touched || submitted)">
+              <span *ngIf="password.errors?.['required']">Password is required</span>
+              <span *ngIf="password.errors?.['minlength']">Password must be at least 8 characters</span>
+              <span *ngIf="password.errors?.['maxlength']">Password cannot exceed 50 characters</span>
+              <span *ngIf="password.errors?.['pattern']">Password must contain uppercase, lowercase, number and special
+                character</span>
+            </div>
           </ion-col>
 
           <!-- Text Area -->
           <ion-col size="12" class="ion-no-margin-start">
             <ion-textarea label="Description:" labelPlacement="floating" fill="solid"
               placeholder="Describe yourself here" name="description" [(ngModel)]="registerData.description"
-              #description></ion-textarea>
+              #description="ngModel" required minlength="10" maxlength="500" rows="4"></ion-textarea>
+
+            <!-- Show Error -->
+            <div class="text-danger" *ngIf="description?.invalid && (description?.touched || submitted)">
+              <span *ngIf="description.errors?.['required']">Description is required</span>
+              <span *ngIf="description.errors?.['minlength']">Description must be at least 10 characters</span>
+              <span *ngIf="description.errors?.['maxlength']">Description cannot exceed 500 characters</span>
+            </div>
           </ion-col>
 
           <!-- Submit Button -->

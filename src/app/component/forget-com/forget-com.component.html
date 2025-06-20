@@ -8,7 +8,10 @@
         password reset link.</p>
       <form class="auth-form-container" #forgetForm="ngForm" (ngSubmit)="onSubmit(forgetForm.value)">
         <ion-input label="Email address" type="email" placeholder="Email address" label-placement="floating"
-          fill="solid" name="email" [(ngModel)]="forgetData.email" #email></ion-input>
+          fill="solid" name="email" [(ngModel)]="forgetData.email" #email="ngModel" required></ion-input>
+        <div class="text-danger" *ngIf="email?.invalid && (email?.touched || submitted)">
+          <span *ngIf="email.errors?.['required']">This is Required</span>
+        </div>
         <ion-button type="submit" routerLink="/otp">Send password reset email</ion-button>
       </form>
       <ion-row class="ion-justify-content-between">

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
@@ -6,12 +7,13 @@ import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-register-com',
-  imports: [IonicModule, FormsModule],
+  imports: [IonicModule, FormsModule, CommonModule],
   templateUrl: './register-com.component.html',
   styleUrls: ['./register-com.component.scss'],
 })
 export class RegisterComComponent implements OnInit {
 
+  // Initial values
   registerData = {
     firstName: '',
     lastName: '',
@@ -27,7 +29,11 @@ export class RegisterComComponent implements OnInit {
     description: '',
   }
 
+  // Properties
+  submitted = false;
+
   onSubmit(data: any) {
+    this.submitted = true;
     console.log("Form data:", data);
   }
 

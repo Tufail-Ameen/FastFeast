@@ -8,9 +8,22 @@
 
             <form class="auth-form-container" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
                 <ion-input label="Enter your email address" label-placement="floating" fill="solid"
-                    placeholder="Email address" name="email" [(ngModel)]="loginData.email" #email></ion-input>
+                    placeholder="Email address" name="email" [(ngModel)]="loginData.email" #email="ngModel"
+                    required></ion-input>
+
+                <!-- Show Error -->
+                <div class="text-danger" *ngIf="email?.invalid && (email?.touched || submitted)">
+                    <span *ngIf="email.errors?.['required']">This is Required</span>
+                </div>
+
                 <ion-input label="Enter your Password" label-placement="floating" fill="solid" placeholder="Password"
-                    name="password" [(ngModel)]="loginData.password" #password></ion-input>
+                    name="password" [(ngModel)]="loginData.password" #password="ngModel" required></ion-input>
+
+                <!-- Show Error -->
+                <div class="text-danger" *ngIf="password?.invalid && (password?.touched || submitted)">
+                    <span *ngIf="password.errors?.['required']">This is Required</span>
+                </div>
+
                 <a routerLink="/forget">Forgot password?</a>
 
                 <ion-button type="submit">Sign in</ion-button>
