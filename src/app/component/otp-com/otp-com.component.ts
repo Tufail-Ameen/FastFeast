@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
@@ -18,34 +18,18 @@ export class OtpComComponent implements OnInit {
     otp: ''
   }
 
-  onSubmit(data: any) {
+  onSubmit(form: NgForm) {
     this.submitted = true;
-    console.log("Form data:", data);
-    
-    // Check if OTP is provided
-    if (!data.otp || data.otp.toString().trim() === '') {
-      console.log('OTP is required');
-      return;
+    console.log("Form data:", form.value);
+    console.log("Form valid:", form.valid);
+
+    // Routing handling
+    if (form.valid) {
+      console.log("Form is valid - navigating to password");
+      this.router.navigate(['/password']);
+    } else {
+      console.log("Form is invalid - validation failed");
     }
-
-    // Check if OTP is 6 digits
-    if (data.otp.toString().length !== 6) {
-      console.log('OTP must be 6 digits');
-      return;
-    }
-
-    // Check if OTP contains only numbers
-    if (!/^\d{6}$/.test(data.otp.toString())) {
-      console.log('OTP must contain only numbers');
-      return;
-    }
-
-    console.log("OTP validated successfully, navigating to password page");
-    this.router.navigate(['/password']);
-  }
-
-  isValidOtpFormat(): boolean {
-    return !!(this.otpData.otp && /^\d{6}$/.test(this.otpData.otp.toString()));
   }
 
   constructor(private router: Router) { }

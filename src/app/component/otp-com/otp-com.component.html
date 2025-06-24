@@ -8,12 +8,14 @@
         number long</p>
 
       <!-- Form -->
-      <form class="auth-form-container" #otpForm="ngForm" (ngSubmit)="onSubmit(otpForm.value)">
+      <form class="auth-form-container" #otpForm="ngForm" (ngSubmit)="onSubmit(otpForm)">
 
         <ion-row>
           <ion-col class="ion-no-padding" size="6">
             <ion-input type="number" label="Enter code" label-placement="floating" fill="solid" placeholder="Enter code"
-              name="otp" [(ngModel)]="otpData.otp" #otp="ngModel" required></ion-input>
+              name="otp" [(ngModel)]="otpData.otp" #otp="ngModel" required minlength="6" maxlength="6"
+              pattern="^[0-9]{6}$" inputmode="numeric" autocomplete="one-time-code" max="999999"
+              min="000000"></ion-input>
           </ion-col>
 
           <ion-col class="ion-padding-start" size="6">
@@ -25,6 +27,11 @@
         <!-- Show Error -->
         <div class="text-danger" *ngIf="otp?.invalid && (otp?.touched || submitted)">
           <span *ngIf="otp.errors?.['required']">OTP is required</span>
+          <span *ngIf="otp.errors?.['minlength']">OTP must be exactly 6 digits</span>
+          <span *ngIf="otp.errors?.['maxlength']">OTP must be exactly 6 digits</span>
+          <span *ngIf="otp.errors?.['pattern']">OTP must contain only 6 digits (0-9)</span>
+          <span *ngIf="otp.errors?.['min']">OTP must be at least 000000</span>
+          <span *ngIf="otp.errors?.['max']">OTP must not exceed 999999</span>
         </div>
 
         <ion-row>
