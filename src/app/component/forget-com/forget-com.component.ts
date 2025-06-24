@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { FormsModule, NgForm } from '@angular/forms';
+import { RouterLink, Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -12,19 +12,28 @@ import { IonicModule } from '@ionic/angular';
 })
 export class ForgetComComponent implements OnInit {
 
-  submitted = false;
-
+  // Initial Values
   forgetData = {
     email: ''
   }
 
-  onSubmit(data: any) {
+  // Properties
+  submitted = false;
+
+  onSubmit(form: NgForm) {
     this.submitted = true;
-    console.log("Form data:", data);
+    console.log(form.value);
+
+    // Only check if form is valid (HTML handles all validations)
+    if (form.valid) {
+      console.log("Form is valid - navigating to OTP");
+      this.router.navigate(['/otp']);
+    } else {
+      console.log("Form is invalid - validation failed");
+    }
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
-
 }

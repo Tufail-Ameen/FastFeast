@@ -8,20 +8,24 @@
 
             <form class="auth-form-container" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
                 <ion-input label="Enter your email address" label-placement="floating" fill="solid"
-                    placeholder="Email address" name="email" [(ngModel)]="loginData.email" #email="ngModel"
-                    required></ion-input>
+                    placeholder="Email address" name="email" [(ngModel)]="loginData.email" #email="ngModel" required
+                    type="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"></ion-input>
 
                 <!-- Show Error -->
                 <div class="text-danger" *ngIf="email?.invalid && (email?.touched || submitted)">
-                    <span *ngIf="email.errors?.['required']">This is Required</span>
+                    <span *ngIf="email.errors?.['required']">Email is required</span>
+                    <span *ngIf="email.errors?.['pattern']">Please enter a valid email format</span>
                 </div>
 
                 <ion-input label="Enter your Password" label-placement="floating" fill="solid" placeholder="Password"
-                    name="password" [(ngModel)]="loginData.password" #password="ngModel" required></ion-input>
+                    name="password" [(ngModel)]="loginData.password" #password="ngModel" required type="password"
+                    minlength="6" maxlength="50"></ion-input>
 
                 <!-- Show Error -->
                 <div class="text-danger" *ngIf="password?.invalid && (password?.touched || submitted)">
-                    <span *ngIf="password.errors?.['required']">This is Required</span>
+                    <span *ngIf="password.errors?.['required']">Password is required</span>
+                    <span *ngIf="password.errors?.['minlength']">Password must be at least 6 characters</span>
+                    <span *ngIf="password.errors?.['maxlength']">Password cannot exceed 50 characters</span>
                 </div>
 
                 <a routerLink="/forget">Forgot password?</a>

@@ -91,7 +91,7 @@ h1 {
 /* Errror Show */
 .text-danger {
     color: #dc3545;
-    font-weight: 900;
+    font-weight: bolder;
     font-size: 13px;
     /* margin-top: 3px; */
     margin-bottom: 10px;

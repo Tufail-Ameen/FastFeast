@@ -6,13 +6,15 @@
       <h1>Reset your password</h1>
       <p class="ion-no-padding ion-no-margin">Enter your user account's verified email address and we will send you a
         password reset link.</p>
-      <form class="auth-form-container" #forgetForm="ngForm" (ngSubmit)="onSubmit(forgetForm.value)">
+      <form class="auth-form-container" #forgetForm="ngForm" (ngSubmit)="onSubmit(forgetForm)">
         <ion-input label="Email address" type="email" placeholder="Email address" label-placement="floating"
-          fill="solid" name="email" [(ngModel)]="forgetData.email" #email="ngModel" required></ion-input>
+          fill="solid" name="email" [(ngModel)]="forgetData.email" #email="ngModel" required
+          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"></ion-input>
         <div class="text-danger" *ngIf="email?.invalid && (email?.touched || submitted)">
-          <span *ngIf="email.errors?.['required']">This is Required</span>
+          <span *ngIf="email.errors?.['required']">Email is required</span>
+          <span *ngIf="email.errors?.['pattern']">Please enter a valid email format</span>
         </div>
-        <ion-button type="submit" routerLink="/otp">Send password reset email</ion-button>
+        <ion-button type="submit">Send password reset email</ion-button>
       </form>
       <ion-row class="ion-justify-content-between">
         <div>
