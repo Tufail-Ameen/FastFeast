@@ -88,16 +88,30 @@ h1 {
     padding: 0 !important;
 }
 
-/* Errror Show */
+/* Validation Error */
 .text-danger {
     color: #dc3545;
     font-weight: bolder;
     font-size: 13px;
-    /* margin-top: 3px; */
     margin-bottom: 10px;
 }
 
-/* ===== GLOBAL AUTH LAYOUT STYLES ===== */
+/* Media Query */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 20px !important;
+    }
+
+    p {
+        font-size: 15px !important;
+    }
+
+    ion-input::part(label) {
+        font-size: 10px !important;
+    }
+}
+
+/* Auth Layout */
 .auth-container {
     display: flex;
     align-items: center;

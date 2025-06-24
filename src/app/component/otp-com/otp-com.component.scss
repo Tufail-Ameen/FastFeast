@@ -1,0 +1,9 @@
+.responsive-padding-start {
+    --padding-start: 20px;
+}
+
+@media (max-width: 576px) {
+    .responsive-padding-start {
+        --padding-start: 0;
+    }
+}

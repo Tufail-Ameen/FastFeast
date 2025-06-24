@@ -1,8 +1,8 @@
 <ion-grid class="auth-container">
   <ion-row class="auth-row">
-    <ion-col size="2"></ion-col>
+    <ion-col size="1" size-sm="1" size-md="1" size-lg="2"></ion-col>
 
-    <ion-col size="8" class="auth-form-container ion-no-padding">
+    <ion-col size="10" size-sm="10" size-md="10" size-lg="8" class="auth-form-container ion-no-padding">
       <h1>Enter security code</h1>
       <p class="ion-no-padding ion-no-margin">Please check your emails for a message with your code. Your code is 6
         number long</p>
@@ -11,14 +11,14 @@
       <form class="auth-form-container" #otpForm="ngForm" (ngSubmit)="onSubmit(otpForm)">
 
         <ion-row>
-          <ion-col class="ion-no-padding" size="6">
+          <ion-col class="ion-no-padding" size="12" size-sm="12" size-md="6" size-lg="6">
             <ion-input type="number" label="Enter code" label-placement="floating" fill="solid" placeholder="Enter code"
               name="otp" [(ngModel)]="otpData.otp" #otp="ngModel" required minlength="6" maxlength="6"
               pattern="^[0-9]{6}$" inputmode="numeric" autocomplete="one-time-code" max="999999"
               min="000000"></ion-input>
           </ion-col>
 
-          <ion-col class="ion-padding-start" size="6">
+          <ion-col class="responsive-padding" size="12" size-sm="12" size-md="6" size-lg="6" >
             <span>We sent your code to:</span> <br>
             <span>tufailameen62&#64;gmail.com</span>
           </ion-col>
