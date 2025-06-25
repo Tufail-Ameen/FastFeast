@@ -374,7 +374,7 @@ ion-select {
 /* Global Css for all headings */
 h1 {
     font-size: 30px !important;
-    font-weight: 900 !important;
+    font-weight: bolder !important;
     color: var(--heading-color) !important;
     margin: 0 !important;
     padding: 0 !important;

@@ -1,14 +1,13 @@
 <ion-grid class="auth-container">
   <ion-row class="auth-row">
-    <ion-col size="2"></ion-col>
-
-    <ion-col size="8" class="auth-form-container">
+    <ion-col size="1" size-sm="1" size-md="2" size-lg="2"></ion-col>
+    <ion-col size="10" size-sm="10" size-md="8" size-lg="8" class="auth-form-container">
       <h1>Register</h1>
       <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
 
         <ion-row>
           <!-- First Name -->
-          <ion-col size="6" class="ion-no-margin-start">
+          <ion-col size="12" size-sm="12" size-md="12" size-lg="6" class="ion-no-margin-start">
             <ion-input class="ion-no-margin" label="First Name:" label-placement="floating" fill="solid"
               placeholder="Enter First Name" name="firstName" [(ngModel)]="registerData.firstName" #firstName="ngModel"
               required minlength="3" maxlength="20" pattern="^[a-zA-Z\s]+$"></ion-input>
@@ -23,7 +22,7 @@
           </ion-col>
 
           <!-- Last Name -->
-          <ion-col size="6" class="ion-no-margin-end">
+          <ion-col size="12" size-sm="12" size-md="12" size-lg="6" class="ion-no-margin-end">
             <ion-input class="ion-no-margin" label="Last Name:" label-placement="floating" fill="solid"
               placeholder="Enter Last Name" name="lastName" [(ngModel)]="registerData.lastName" #lastName="ngModel"
               required minlength="3" maxlength="20" pattern="^[a-zA-Z\s]+$"></ion-input>
@@ -38,7 +37,7 @@
           </ion-col>
 
           <!-- Gender -->
-          <ion-col size="6" class="ion-no-margin-start ion-no-padding-bottom">
+          <ion-col size="12" size-sm="12" size-md="12" size-lg="6" class="ion-no-margin-start ion-no-padding-bottom">
             <ion-label>Gender:</ion-label>
             <ion-radio-group name="gender" [(ngModel)]="registerData.gender">
               <ion-row class="ion-no-padding" style="height: 40px;">
@@ -59,7 +58,7 @@
           </ion-col>
 
           <!-- Language -->
-          <ion-col size="6" class="ion-no-margin-end ion-no-padding-top">
+          <ion-col size="12" size-sm="12" size-md="12" size-lg="6" class="ion-no-margin-end ion-no-padding-top">
             <ion-label>Languages:</ion-label>
             <ion-row class="ion-no-padding" style="height: 40px;">
               <ion-col size="5" class="ion-no-padding" style="display: flex; height: 100%; align-items: center;">
@@ -78,7 +77,7 @@
           </ion-col>
 
           <!-- Email -->
-          <ion-col size="6" class="ion-no-margin-start">
+          <ion-col size="12" size-sm="12" size-md="12" size-lg="6" class="ion-no-margin-start">
             <ion-input class="ion-no-margin" label="Email:" label-placement="floating" fill="solid"
               placeholder="Enter Email" name="email" [(ngModel)]="registerData.email" #email="ngModel" required
               pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"></ion-input>
@@ -91,7 +90,7 @@
           </ion-col>
 
           <!-- Phone No -->
-          <ion-col size="6" class="ion-no-margin-end">
+          <ion-col size="12" size-sm="12" size-md="12" size-lg="6" class="ion-no-margin-end">
             <ion-input class="ion-no-margin" label="Phone No:" label-placement="floating" fill="solid"
               placeholder="Enter Phone No" name="phoneNo" [(ngModel)]="registerData.phoneNo" #phoneNo="ngModel" required
               type="tel" pattern="^[+]?[0-9]{10,15}$" minlength="10" maxlength="15"></ion-input>
@@ -106,7 +105,7 @@
           </ion-col>
 
           <!-- City -->
-          <ion-col size="6" class="ion-no-margin-start">
+          <ion-col size="12" size-sm="12" size-md="12" size-lg="6" class="ion-no-margin-start">
             <ion-select label="Select City:" label-placement="floating" fill="solid" name="city"
               [(ngModel)]="registerData.city" #city>
               <ion-select-option value="apple">Karachi</ion-select-option>
@@ -123,7 +122,7 @@
           </ion-col>
 
           <!-- Password -->
-          <ion-col size="6" class="ion-no-margin-end">
+          <ion-col size="12" size-sm="12" size-md="12" size-lg="6" class="ion-no-margin-end">
             <ion-input class="ion-no-margin" label="Password:" label-placement="floating" fill="solid" name="password"
               [(ngModel)]="registerData.password" #password="ngModel" required type="password" minlength="8"
               maxlength="50" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
@@ -169,4 +168,4 @@
 
     </ion-col>
   </ion-row>
-</ion-grid>
+</ion-grid>  
