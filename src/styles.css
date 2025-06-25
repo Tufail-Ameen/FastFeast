@@ -14,6 +14,7 @@
     --borderGray: 2px solid #111827;
 }
 
+/* Global Css for all buttons */
 ion-button {
     cursor: pointer;
     --background: var(--primary_color);
@@ -36,6 +37,7 @@ ion-button:hover {
     height: 13%;
 }
 
+/* Global Css for all links */
 a {
     text-decoration: underline !important;
     color: var(--input-label) !important;
@@ -46,7 +48,7 @@ a:hover {
     color: var(--primary_hover-color) !important;
 }
 
-/* Inputs */
+/* Global Css for all inputs */
 ion-input {
     --ion-color-primary: var(--primary_color);
     --placeholder-color: gray;
@@ -63,11 +65,6 @@ ion-input.ion-focused::part(label) {
     color: var(--primary_color);
 }
 
-ion-input.ion-valid::part(label),
-ion-input.has-value::part(label) {
-    color: var(--primary_color);
-}
-
 ion-input::part(native) {
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -79,7 +76,302 @@ ion-input.ion-focused::part(native) {
     box-shadow: 0 0 0 1px var(--primary_color);
 }
 
-/* Headings */
+/* Override Ionic's automatic validation color changes */
+ion-input.ion-valid::part(label),
+ion-input.has-value::part(label),
+ion-input.ion-valid::part(native),
+ion-input.has-value::part(native) {
+    color: inherit !important;
+    border-color: inherit !important;
+    box-shadow: inherit !important;
+}
+
+/* Force same appearance for all states */
+ion-input.ion-valid,
+ion-input.has-value {
+    --color: var(--input-label) !important;
+    --border-color: #ddd !important;
+}
+
+ion-input.ion-valid.ion-focused,
+ion-input.has-value.ion-focused {
+    --color: var(--primary_color) !important;
+    --border-color: var(--primary_color) !important;
+}
+
+/* Additional comprehensive overrides */
+ion-input.ion-valid,
+ion-input.has-value,
+ion-input.ion-touched.ion-valid,
+ion-input.ion-dirty.ion-valid {
+    --highlight-color: var(--primary_color) !important;
+    --highlight-color-focused: var(--primary_color) !important;
+    --highlight-color-valid: var(--primary_color) !important;
+    --border-color: #ddd !important;
+    --border-color-focused: var(--primary_color) !important;
+    --border-color-valid: #ddd !important;
+    --label-color: gray !important;
+    --label-color-focused: var(--primary_color) !important;
+    --label-color-valid: gray !important;
+}
+
+/* Override all possible validation states */
+ion-input.ion-valid::part(label),
+ion-input.has-value::part(label),
+ion-input.ion-touched.ion-valid::part(label),
+ion-input.ion-dirty.ion-valid::part(label) {
+    color: gray !important;
+}
+
+ion-input.ion-valid.ion-focused::part(label),
+ion-input.has-value.ion-focused::part(label),
+ion-input.ion-touched.ion-valid.ion-focused::part(label),
+ion-input.ion-dirty.ion-valid.ion-focused::part(label) {
+    color: var(--primary_color) !important;
+}
+
+ion-input.ion-valid::part(native),
+ion-input.has-value::part(native),
+ion-input.ion-touched.ion-valid::part(native),
+ion-input.ion-dirty.ion-valid::part(native) {
+    border-color: #ddd !important;
+    box-shadow: none !important;
+}
+
+ion-input.ion-valid.ion-focused::part(native),
+ion-input.has-value.ion-focused::part(native),
+ion-input.ion-touched.ion-valid.ion-focused::part(native),
+ion-input.ion-dirty.ion-valid.ion-focused::part(native) {
+    border-color: var(--primary_color) !important;
+    box-shadow: 0 0 0 1px var(--primary_color) !important;
+}
+
+/* Global Css for all textareas */
+ion-textarea {
+    --ion-color-primary: var(--primary_color);
+    --placeholder-color: gray;
+    --placeholder-opacity: 1;
+    --padding-start: 10px;
+    --padding-end: 10px;
+}
+
+ion-textarea::part(label) {
+    color: gray;
+}
+
+ion-textarea.ion-focused::part(label) {
+    color: var(--primary_color);
+}
+
+ion-textarea::part(native) {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+ion-textarea.ion-focused::part(native) {
+    border-color: var(--primary_color);
+    box-shadow: 0 0 0 1px var(--primary_color);
+}
+
+/* Override Ionic's automatic validation color changes for textarea */
+ion-textarea.ion-valid::part(label),
+ion-textarea.has-value::part(label),
+ion-textarea.ion-valid::part(native),
+ion-textarea.has-value::part(native) {
+    color: inherit !important;
+    border-color: inherit !important;
+    box-shadow: inherit !important;
+}
+
+/* Force same appearance for all textarea states */
+ion-textarea.ion-valid,
+ion-textarea.has-value {
+    --color: var(--input-label) !important;
+    --border-color: #ddd !important;
+}
+
+ion-textarea.ion-valid.ion-focused,
+ion-textarea.has-value.ion-focused {
+    --color: var(--primary_color) !important;
+    --border-color: var(--primary_color) !important;
+}
+
+/* Additional comprehensive overrides for textarea */
+ion-textarea.ion-valid,
+ion-textarea.has-value,
+ion-textarea.ion-touched.ion-valid,
+ion-textarea.ion-dirty.ion-valid {
+    --highlight-color: var(--primary_color) !important;
+    --highlight-color-focused: var(--primary_color) !important;
+    --highlight-color-valid: var(--primary_color) !important;
+    --border-color: #ddd !important;
+    --border-color-focused: var(--primary_color) !important;
+    --border-color-valid: #ddd !important;
+    --label-color: gray !important;
+    --label-color-focused: var(--primary_color) !important;
+    --label-color-valid: gray !important;
+}
+
+/* Override all possible validation states for textarea */
+ion-textarea.ion-valid::part(label),
+ion-textarea.has-value::part(label),
+ion-textarea.ion-touched.ion-valid::part(label),
+ion-textarea.ion-dirty.ion-valid::part(label) {
+    color: gray !important;
+}
+
+ion-textarea.ion-valid.ion-focused::part(label),
+ion-textarea.has-value.ion-focused::part(label),
+ion-textarea.ion-touched.ion-valid.ion-focused::part(label),
+ion-textarea.ion-dirty.ion-valid.ion-focused::part(label) {
+    color: var(--primary_color) !important;
+}
+
+ion-textarea.ion-valid::part(native),
+ion-textarea.has-value::part(native),
+ion-textarea.ion-touched.ion-valid::part(native),
+ion-textarea.ion-dirty.ion-valid::part(native) {
+    border-color: #ddd !important;
+    box-shadow: none !important;
+}
+
+ion-textarea.ion-valid.ion-focused::part(native),
+ion-textarea.has-value.ion-focused::part(native),
+ion-textarea.ion-touched.ion-valid.ion-focused::part(native),
+ion-textarea.ion-dirty.ion-valid.ion-focused::part(native) {
+    border-color: var(--primary_color) !important;
+    box-shadow: 0 0 0 1px var(--primary_color) !important;
+}
+
+/* Global Css for all checkboxes and radio buttons */
+ion-checkbox {
+    --checkbox-background-checked: var(--primary_color);
+    --border-color-checked: var(--primary_color);
+    --checkmark-color: var(--white);
+}
+
+ion-radio {
+    --color-checked: var(--primary_color);
+    --border-color-checked: var(--primary_color);
+}
+
+/* Native HTML checkboxes and radio buttons */
+input[type="checkbox"]:checked {
+    accent-color: var(--primary_color);
+}
+
+input[type="radio"]:checked {
+    accent-color: var(--primary_color);
+}
+
+/* Custom checkbox and radio styles for better browser support */
+input[type="checkbox"] {
+    accent-color: var(--primary_color);
+}
+
+input[type="radio"] {
+    accent-color: var(--primary_color);
+}
+
+/* Global Css for all selects */
+select {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: var(--input-label);
+    font-size: 14px;
+    accent-color: var(--primary_color);
+}
+
+select:focus {
+    border-color: var(--primary_color);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--primary_color);
+}
+
+select option {
+    color: var(--input-label);
+}
+
+select option:checked,
+select option[selected] {
+    background-color: var(--primary_color);
+    color: var(--white);
+}
+
+select option:hover {
+    background-color: var(--primary_hover-color);
+    color: var(--white);
+}
+
+/* Ionic select component */
+ion-select {
+    --placeholder-color: gray;
+    --placeholder-opacity: 1;
+    --border-color: #ddd;
+    --border-radius: 4px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    --color: var(--input-label);
+    --ion-color-primary: var(--primary_color);
+    --ion-color-primary-rgb: 13, 148, 136;
+}
+
+ion-select.ion-focused {
+    --border-color: var(--primary_color);
+    --box-shadow: 0 0 0 1px var(--primary_color);
+}
+
+ion-select::part(icon) {
+    color: var(--primary_color);
+}
+
+ion-select::part(placeholder) {
+    color: gray;
+}
+
+ion-select.ion-focused::part(placeholder) {
+    color: var(--primary_color);
+}
+
+ion-select::part(text) {
+    color: var(--input-label);
+}
+
+/* Style ion-select-option elements */
+ion-select-option {
+    --color: var(--input-label);
+    --ion-color-primary: var(--primary_color);
+    --ion-color-primary-rgb: 13, 148, 136;
+}
+
+ion-select-option.ion-selected {
+    --color: var(--white);
+    --background: var(--primary_color);
+    --background-rgb: 13, 148, 136;
+}
+
+ion-select-option.ion-focused {
+    --background: var(--primary_hover-color);
+    --color: var(--white);
+}
+
+/* Force selection indicators */
+ion-select-option[aria-selected="true"] {
+    --color: var(--white);
+    --background: var(--primary_color);
+    --background-rgb: 13, 148, 136;
+}
+
+/* Additional select styling for better coverage */
+ion-select {
+    --highlight-color: var(--primary_color);
+    --highlight-color-focused: var(--primary_color);
+    --highlight-color-selected: var(--primary_color);
+}
+
+/* Global Css for all headings */
 h1 {
     font-size: 30px !important;
     font-weight: 900 !important;
@@ -88,7 +380,7 @@ h1 {
     padding: 0 !important;
 }
 
-/* Validation Error */
+/* Global Css for all validation errors */
 .text-danger {
     color: #dc3545;
     font-weight: bolder;
@@ -96,7 +388,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Media Query */
+/* Global Css for all media queries */
 @media (max-width: 576px) {
     h1 {
         font-size: 20px !important;
@@ -131,7 +423,6 @@ h1 {
 .auth-row {
     width: 100%;
 }
-
 
 .border {
     border: 1px solid red;
